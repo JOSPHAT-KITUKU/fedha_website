@@ -254,7 +254,8 @@ nav {
 }
 .card{
   width: 32%;
-  margin: 1px;
+  margin: 7px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
