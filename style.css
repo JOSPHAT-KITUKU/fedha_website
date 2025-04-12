@@ -4,6 +4,10 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+a{
+  text-decoration: none;
+  color: #fff;
+}
 body{
   background-color: rgb(179, 179, 179, 0.2);
 }
@@ -249,8 +253,14 @@ nav {
   align-items: center;
 }
 .card{
-  width: 30%;
-  margin: 10px;
+  width: 32%;
+  margin: 1px;
+  box-shadow: 0 5px 7px gray;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .card-image>img{
   width: 300px;
@@ -259,6 +269,66 @@ nav {
 iframe{
   width: 200px;
   height: 200px;
+}
+.membership_page>h1{
+  padding: 20px;
+}
+.membership_page>h5{
+  color: #53bc08;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px;
+}
+.membership_page>p{
+  padding: 15px;
+  margin-top: -10px;
+}
+.about_page>h5, .about_page>h6{
+  color: #53bc08;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px;
+}
+.about_page>h1{
+  padding: 20px;
+}
+.about_page>p{
+  padding: 15px;
+  margin-top: -10px;
+}
+.team{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.team>h1{
+  color: #53bc08;
+  padding: 20px;
+}
+.team_conts{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right,rgba(10, 193, 10, 0.1),rgb(19, 18, 18, 0.1));
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.team_conts>img{
+  width: 600px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.team_text>h3{
+  color: #53bc08;
+  margin-top: -200px;
+  padding-bottom: 20px;
+}
+.team_text{
+  padding: 20px;
 }
 @media (max-width: 768px) {
   .nav-links {
