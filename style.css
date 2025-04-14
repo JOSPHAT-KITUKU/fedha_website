@@ -336,8 +336,30 @@ iframe{
 .team_text{
   padding: 20px;
 }
+.small_devices{
+  display: none;
+}
 @media (max-width: 768px) {
-  .nav-links {
+  .nav-links, .cta-button {
     display: none;
+  }
+  .small_devices{
+    display: flex;
+  }
+  .nav-links_small{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 2000;
+    top:16vh;
+    right: 5%;
+    background-color: rgb(101, 172, 54, 0.7);
+    border-radius: 10px;
+    width: 22%;
+    height: 150px;
+    font-size: 12px;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
   }
 }
