@@ -416,7 +416,7 @@ iframe{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    margin-top: -200px;
+    margin-top: 20%;
   }
   .welcome-text>h1{
     padding: 6px;
