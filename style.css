@@ -355,22 +355,6 @@ iframe{
     background-color: rgb(179, 179, 179, 0.2);
   }
 
-  header {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-  }
-  
   .nav-links, .cta-button {
     display: none;
   }
@@ -385,7 +369,7 @@ iframe{
     display: flex;
     flex-direction: column;
     z-index: 2000;
-    top:16vh;
+    top:10vh;
     right: 5%;
     background-color: rgb(101, 172, 54, 0.7);
     border-radius: 10px;
