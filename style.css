@@ -401,7 +401,7 @@ iframe{
     font-size: 12px;
     font-weight: 60px;
     top:0vh;
-    height: 130vh;
+    height: 40%;
     color: #ffffff;
     z-index: 98;
     background: rgb(6, 86, 6, 0.5);
@@ -471,7 +471,7 @@ iframe{
     background-image: linear-gradient(to right,rgba(10, 193, 10, 0.8),rgb(19, 18, 18, 0.8));;
     margin: auto;
     margin-top: -16vh;
-    position: relative;
+    position: absolute;
     z-index: 100;
     box-shadow: 0 2px 5px rgba(0,0,0,0.6);
     border-radius: 12px;
@@ -497,6 +497,8 @@ iframe{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 220px;
   }
   .desc-1{
     flex-grow: 50%;
