@@ -239,7 +239,14 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  justify-content: center;
+  align-items: center;
   color: #000;
+}
+.achievements>h1{
+  font-weight: 900;
+  font-size: 40px;
+  color:#65ac36;
 }
 .achievements>ul li{
   list-style: none;
