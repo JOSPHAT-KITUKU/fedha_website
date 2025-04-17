@@ -266,21 +266,39 @@ nav {
   align-items: center;
 }
 .card{
-  width: 32%;
+  width: 29%;
   margin: 7px;
   margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+  height: 460px;
+  background-color: rgba(177, 181, 173, 0.2);
+  border-radius: 12px;
 }
 .card-image>img{
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
 }
 .card>p{
   width: 300px;
   font-size: small;
+  padding: 18px 0px 18px 0px;
+}
+.card-button{
+  align-self: flex-end;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 10px 30px 0px 0px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 iframe{
   width: 200px;
