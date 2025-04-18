@@ -239,7 +239,6 @@ nav {
 .achievements{
   display: flex;
   flex-direction: column;
-  padding: 20px;
   justify-content: center;
   align-items: center;
   color: #000;
@@ -250,7 +249,7 @@ nav {
   color:#65ac36;
 }
 .achievements>p{
-  width: 80%;
+  width: 100%;
   padding: 15px;
   line-height: 30px;
 }
@@ -258,15 +257,8 @@ nav {
   list-style: none;
   columns: black;
 }
-.achieve-det{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-}
 .card{
-  width: 29%;
+  width: 94%;
   margin: 7px;
   margin-bottom: 50px;
   display: flex;
@@ -274,24 +266,24 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  height: 460px;
+  height: 500px;
   background-color: rgba(177, 181, 173, 0.2);
   border-radius: 12px;
 }
 .card-image>img{
-  width: 320px;
-  height: 320px;
+  width: 325px;
+  height: 325px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
 }
 .card>p{
-  width: 300px;
+  width: 320px;
   font-size: small;
   padding: 18px 0px 18px 0px;
 }
 .card-button{
   align-self: flex-end;
-  border: 1px solid black;
+  border: 1px solid rgb(45, 146, 228);
   border-radius: 8px;
   margin: 10px 30px 0px 0px;
   width: 30px;
@@ -366,6 +358,21 @@ iframe{
 }
 .small_devices{
   display: none;
+}
+.swiper{
+  width: 100%;
+}
+.swiper-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 540px;
+  border-radius: 12px;
 }
 @media (max-width: 768px) {
   * {
