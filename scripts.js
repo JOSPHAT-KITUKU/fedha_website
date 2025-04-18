@@ -36,5 +36,18 @@ document.addEventListener("DOMContentLoaded", function () {
       el: '.swiper-scrollbar',
       draggable: true,
     },
+    breakpoints: {
+      // When screen width is >= 0px (small devices)
+      0: {
+        slidesPerView: 1,
+      },
+      // When screen width is >= 768px (tablets)
+      768: {
+        slidesPerView: 2,
+      },
+      // When screen width is >= 1024px (desktops)
+      1024: {
+        slidesPerView: 3,
+      }}
   });
 });
