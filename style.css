@@ -10,6 +10,7 @@ a{
 }
 body{
   background-color: rgb(179, 179, 179, 0.2);
+  min-height: 80%;
 }
 header {
   background-color: #fff;
@@ -373,6 +374,14 @@ iframe{
   align-items: center;
   height: 540px;
   border-radius: 12px;
+}
+.donate_cover{
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 768px) {
   * {
