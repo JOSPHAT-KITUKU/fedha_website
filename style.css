@@ -121,7 +121,13 @@ nav {
 .contact h3{
   margin-bottom: 20px;
 }
-.contacts-det h4,li{
+.contacts-det>h4{
+  color: #72fd0e;
+  padding: 10px;
+  list-style: none;
+  margin-left: -10px;
+}
+.contact-det>ul>li{
   color: #72fd0e;
   padding: 10px;
   list-style: none;
@@ -382,6 +388,40 @@ iframe{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.project-cont{
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.youth-cont{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.youth_list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.youth_image{
+  width: 400px;
+  height: 400px;
+}
+.youth_image>img{
+  width: 100%;
+  height: 100%;
+}
+.youth_list>ol>li{
+  color: #050605;
+  padding: 10px;
 }
 @media (max-width: 768px) {
   * {
