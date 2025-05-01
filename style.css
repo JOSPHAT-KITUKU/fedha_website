@@ -72,6 +72,7 @@ nav {
 .slider{
   height: 100vh;
   position: relative;
+  top: -50px;
 }
 .slider .list .item{
   position: absolute;
@@ -79,9 +80,12 @@ nav {
   overflow: hidden;
   opacity: 0;
   transition: .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .slider .list .item img{
-  width: 100%;
+  width: 99%;
   height: 100%;
   object-fit: cover;
 }
@@ -97,7 +101,7 @@ nav {
   position: absolute;
   left: 10%;
   top: 20%;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,7 +109,7 @@ nav {
   max-width: 80%;
   z-index: 1;
   color: #fff;
-  background-color: rgb(101, 172, 54, 0.3);
+
 }
 .slider .list .item .content p:nth-child(1){
   text-transform: uppercase;
@@ -118,6 +122,7 @@ nav {
 .slider .list .item.active{
   opacity: 1;
   z-index: 10;
+  background-color: #fff;
 }
 @keyframes showContent {
   to{
@@ -129,7 +134,7 @@ nav {
 .slider .list .item.active p:nth-child(1),
 .slider .list .item.active h2,
 .slider .list .item.active p:nth-child(3){
-  transform: translateY(30px);
+  transform: translateY(40px);
   filter: blur(20px);
   opacity: 0;
   animation: showContent .5s .7s ease-in-out 1 forwards;
