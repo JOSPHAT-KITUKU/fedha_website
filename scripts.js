@@ -114,3 +114,17 @@ thumbnails.forEach((thumbnail, index) => {
     })
 })
 
+//Scroll Animation 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+    }
+  });
+}, {
+  threshold: 0.2 // adjust based on when you want it to trigger
+});
+
+document.querySelectorAll('.cont-sect').forEach(el => {
+  observer.observe(el);
+});

@@ -248,6 +248,18 @@ nav {
     font-size: 30px;
     margin: 0;
   }
+  .donate_btnm button{
+    width: 150px;
+    background-color: rgb(194, 229, 17);
+    height: 40px;
+    margin: 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #5c3b00;
+    transition: all .5ms ease;
+    z-index: 1000;
+  }
 }
  
 .welcome-text{
@@ -374,23 +386,34 @@ nav {
   padding: 10px;
   height: 800px;
 }
-.core-progs{
+.projects .core-progs{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
-.cont-sect{
-  flex-basis: 32%;
+.projects .core-progs .cont-sect{
+  flex-basis: 30%;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.projects .core-progs .cont-sect.in-view{
+  opacity: 1;
+  transform: translateY(0);
 }
 .cont-sect h2{
   width: 100%;
   text-align: center;
 }
 .cont-sect img{
-  margin-left: 80px;
   width: 200px;
   height: 200px;
   margin-bottom: -30px;
@@ -399,6 +422,34 @@ nav {
   font-weight: 900;
   font-size: 40px;
   color:#65ac36;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cont-sect {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When it comes into view */
+.cont-sect.in-view {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.projects .core-progs .cont-sect:hover{
+  transform: translateY(-20px); /* gentle lift */
+  background: linear-gradient(to right, rgba(10, 193, 10, 0.1), rgba(19, 18, 18, 0.1));
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 .achievements{
   display: flex;
@@ -457,8 +508,8 @@ nav {
   align-items: center;
 }
 iframe{
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 400px;
 }
 .membership_page>h1{
   padding: 20px;
@@ -546,59 +597,55 @@ iframe{
   justify-content: center;
   align-items: center;
 }
-.project-cont{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-between;
-}
-.youth-cont{
-  margin: 20px;
-}
-.youth_list{
-  width:100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-}
-.youth-cont:nth-child(1){
-  flex-basis: 100%;
-}
-.youth_image>img{
-  width: 400px;
-  height: 350px;
-}
-.youth_list>ol>li{
-  color: #050605;
-  padding: 10px;
-  margin: 5px;
-}
-
 .project-cont {
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* responsive */
+  gap: 30px;
+  padding: 40px 20px;
+  background: #f9f9f9;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .youth-cont {
-  background-color: white;
-  margin: 2rem 0;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
 }
 
-.youth_list {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
+.youth-cont:hover {
+  transform: translateY(-5px);
+}
+
+.youth-cont h2 {
+  color: #2b9348;
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 700;
 }
 
 .youth_list ol {
-  flex: 1;
-  padding-left: 1.5rem;
+  padding-left: 20px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.youth_list ol > li {
+  margin-bottom: 10px;
+}
+
+.youth_list ul {
+  padding-left: 20px;
+  list-style-type: circle;
+  color: #555;
+}
+
+.youth_image {
+  margin-top: 15px;
+  text-align: center;
 }
 
 .youth_image img {
@@ -606,7 +653,6 @@ iframe{
   height: auto;
   border-radius: 8px;
 }
-
 .contact {
   background-color: #222;
   color: white;
@@ -630,7 +676,7 @@ iframe{
   position: relative;
   width: 100%;
   height: 400px; /* You can adjust height */
-  background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0)), url('fimages/medical_checkup.jpg');
+  
   background-size: cover;
   background-position: center;
   display: flex;
@@ -651,6 +697,218 @@ iframe{
 .experience-content p {
   font-size: 20px;
   margin: 0;
+}
+/* ===== HERO SECTION ===== */
+.experience-hero {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0)), url('fimages/medical_checkup.jpg');
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  margin-top: -50px;
+}
+
+.experience-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.experience-content p {
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+
+/* ===== ABOUT SECTION ===== */
+.about_page {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  color: #333;
+  line-height: 1.8;
+}
+
+.about_page h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #198754;
+}
+
+.about_page h5 {
+  font-size: 22px;
+  color: #0d6efd;
+  margin-top: 25px;
+}
+
+.about_page h6 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #198754;
+  margin-top: 15px;
+}
+
+
+/* ===== TEAM SECTION ===== */
+.team {
+  background: #f9f9f9;
+  padding: 60px 20px;
+}
+
+.team h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.team_conts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.team_text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.team_text h3 {
+  color: #0d6efd;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.team_text p {
+  color: #555;
+  font-size: 18px;
+}
+
+.team_conts img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ===== MAP SECTION ===== */
+.location_map {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.location_map h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #198754;
+}
+
+.location_map p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.location_map iframe {
+  width: 100%;
+  max-width: 1000px;
+  height: 450px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.mpesa-donate {
+  background-color: #f4fef4;
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: -50px;
+}
+
+.mpesa-container {
+  max-width: 700px;
+  margin: auto;
+  color: #333;
+}
+
+.mpesa-container h2 {
+  font-size: 32px;
+  color: #198754;
+  margin-bottom: 15px;
+}
+
+.mpesa-container p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.mpesa-details {
+  text-align: left;
+  background: #fff;
+  padding: 20px;
+  border-left: 5px solid #198754;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.mpesa-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mpesa-details li {
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+.optional-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.optional-form h4 {
+  margin-bottom: 20px;
+  color: #198754;
+}
+
+.optional-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.optional-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.optional-form button {
+  background: #198754;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.optional-form button:hover {
+  background: #145d3c;
 }
 
 @media (max-width: 768px) {
@@ -771,9 +1029,7 @@ iframe{
     list-style: none;
   }
 
-  iframe{
-    display: none;
-  }
+  
 
   .About{
     display: flex;
@@ -896,5 +1152,19 @@ iframe{
     align-items: center;
     color: #000;
     margin-top: 830px;
+  }
+  .experience-content h1 {
+    font-size: 36px;
+  }
+
+  .team_conts {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about_page h1,
+  .team h1,
+  .location_map h1 {
+    font-size: 28px;
   }
 }
