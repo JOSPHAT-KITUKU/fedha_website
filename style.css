@@ -640,6 +640,8 @@ iframe{
   background: #f9f9f9;
   max-width: 1200px;
   margin: auto;
+  position: relative;
+  margin-top: -50px;
 }
 
 .youth-cont {
@@ -1009,7 +1011,7 @@ iframe{
   min-height: 100vh;
   background-color: #f8fdf9;
   margin-top: -50px;
-  position: absolute;
+  position: relative;
 }
 
 .donation-card {
@@ -1027,7 +1029,7 @@ iframe{
 /* Left: Image Background */
 .donation-left {
   flex: 1;
-  background: url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
+  background: url('fimages/african-kids-enjoying-life.jpg') center center/cover no-repeat;
   position: relative;
   color: #fff;
   padding: 40px;

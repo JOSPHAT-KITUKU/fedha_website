@@ -8,7 +8,7 @@ $reference = $_GET['reference'];
 
 $ch = curl_init("https://api.paystack.co/transaction/verify/" . $reference);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "Authorization: Bearer" . PAYSTACK_SECRET, // Replace with your actual key
+     "Authorization: Bearer " . PAYSTACK_SECRET, // Replace with your actual key
 ]);
 
 //;
