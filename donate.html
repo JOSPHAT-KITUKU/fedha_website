@@ -12,6 +12,7 @@
         content="Welcome to Fedha Brothers CBO - Empowering communities through purpose-driven programs.">
     
     <script src="https://kit.fontawesome.com/18076184a6.js" crossorigin="anonymous"></script>
+    <script src="https://js.paystack.co/v2/inline.js"></script>
 </head>
 <body>
     <header>
@@ -48,34 +49,58 @@
     </div>
 
 
-   <section class="mpesa-donate">
-  <div class="mpesa-container">
-    <h2>Support Our Mission</h2>
-    <p>Make a donation via <strong>M-PESA</strong> to help us continue empowering our community.</p>
-
-    <div class="mpesa-details">
-      <h3>M-PESA Details:</h3>
-      <ul>
-        <li><strong>Go to M-PESA > Lipa na M-PESA</strong></li>
-        <li>Select <strong>Pay Bill</strong></li>
-        <li><strong>PayBill Number:</strong> 400200</li>
-        <li><strong>Account Number:</strong> 862124</li>
-        <li>Enter the amount you'd like to donate</li>
-        <li>Enter your M-PESA PIN to confirm</li>
-      </ul>
+<section class="donation-container">
+  <div class="donation-card">
+    <div class="donation-left">
+      <div class="donation-text">
+        <h2>Support Our Cause</h2>
+        <p>Your donation helps us uplift lives in underserved communities through education, food programs, and empowerment projects.</p>
+        <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa">
+        <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" alt="MasterCard">
+        <img src="fimages/mpesa.png" alt="M-Pesa" style="width: 40px;height: 40px;">
+      </div>
     </div>
-
-    <div class="optional-form">
-      <h4>Optional: Confirm Your Donation</h4>
-      <form>
-        <input type="text" placeholder="Full Name" required>
-        <input type="tel" placeholder="Phone Number" required>
-        <input type="number" placeholder="Donation Amount" required>
-        <button type="submit">Confirm Donation</button>
+    <div class="donation-form">
+      <form action="initialize.php" method="POST">
+        <h3>Make a Donation</h3>
+        <input type="text" name="name" placeholder="Your full name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <input type="number" name="amount" placeholder="Amount in KES" required>
+        <button type="submit">Donate Now</button>
       </form>
     </div>
   </div>
 </section>
+
+
+
+  <script>
+    const form = document.getElementById('paymentForm');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const amount = document.getElementById('amount').value * 100; // KES to pesewas
+
+      fetch('initialize_payment.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `email=${email}&amount=${amount}`
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.url) {
+          // Redirect to Paystack
+          window.location.href = data.url;
+        } else {
+          alert('Failed to initialize payment');
+        }
+      });
+    });
+  </script>
 
 
     <section id="contact" class="contact">
@@ -110,5 +135,6 @@
     <script src="scripts.js"></script>
     <!--Slider-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </body>
 </html>
