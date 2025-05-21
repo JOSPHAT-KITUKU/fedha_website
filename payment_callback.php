@@ -1,4 +1,5 @@
 <?php
+ require_once 'config.php';
 if (!isset($_GET['reference'])) {
     die("No transaction reference provided.");
 }
@@ -7,8 +8,10 @@ $reference = $_GET['reference'];
 
 $ch = curl_init("https://api.paystack.co/transaction/verify/" . $reference);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "Authorization: Bearer sk_live_08114d3e1b5c10c328e5a9d49be1216b2642e3e7", // Replace with your actual key
+    "Authorization: Bearer" . PAYSTACK_SECRET, // Replace with your actual key
 ]);
+
+//;
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $response = curl_exec($ch);
